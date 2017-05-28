@@ -74,9 +74,12 @@ public class Stream2Test {
         final List<Integer> list = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
 
         assert 55 == list.stream().reduce(0, (a, b) -> a + b);
+        assert 55 == list.stream().reduce(0, Integer::sum);
         assert 3628800 == list.stream().reduce(1, (a, b) -> a * b);
-
+        assert 10 == list.stream().reduce(Integer::max).get();
+        assert 1 == list.stream().reduce(Integer::min).get();
     }
+
 
     public static class Member {
 

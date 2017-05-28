@@ -9,11 +9,6 @@ public class RegexTest {
 
     @Test
     public void test1() throws Exception {
-
-        String v1 = "APP/11 bbb";
-
-        final boolean r = Pattern.compile("APP/\\d*\\s").matcher(v1).find();
-
-        assert r;
+        assert Pattern.compile("APP/\\d*\\s").matcher("APP/11 bbb").find();
     }
 }
